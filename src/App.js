@@ -16,10 +16,13 @@ function App() {
         <Route path='/dispensary-signup'>
           <DispensarySignUp />
         </Route>
-      </Switch>
-      <div className='form-container'>
+        <Route exact path='/'>
           <Landing />
-      </div>
+        </Route>
+      </Switch>
+      {/* <div className='form-container'>
+          <Landing />
+      </div> */}
     </div>
   );
 }

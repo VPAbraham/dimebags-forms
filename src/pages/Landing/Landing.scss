@@ -1,0 +1,58 @@
+@import '../../variables';
+
+.landing {
+  margin: 3rem;
+
+  &__welcome {
+    max-width: 500px;
+    margin: auto;
+
+    h1 {
+      color: $main-green;
+      font-size: 60px;
+    }
+
+    p {
+      color: $main-green
+    }
+  }
+
+  &__options {
+    display: flex;
+    width: 80%;
+    margin: 10rem auto;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+
+    p {
+      font-size: 2rem;
+      $color: $accent-white;
+    }
+
+    img {
+      height: 6rem;
+      width: auto;
+    }
+  }
+
+  .questions {
+    color: $main-green
+  }
+}
+
+.divider {
+  height: 200px;
+  width: 5px;
+  background-color: $grey-bg;
+}
+
+.route-link {
+  
+}
+
+.route-link:hover {
+  outline: none;
+  text-decoration: none;
+  color: $main-green;
+}
