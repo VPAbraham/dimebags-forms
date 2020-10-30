@@ -1,4 +1,5 @@
 @import "~bootstrap/scss/bootstrap";
+@import './variables';
 
 * {
   box-sizing: border-box;
@@ -14,6 +15,24 @@ html {
 .App {
   text-align: center;
   background-color: #282c34;
+}
+
+a {
+  text-decoration: none; 
+}
+
+a:visited {
+  color: $accent-white;
+  text-decoration: none; 
+}
+
+a:hover {
+  color: green;
+  text-decoration: none; 
+}
+
+input:focus, textarea:focus, select:focus{
+  outline: none;
 }
 
 // .logo {

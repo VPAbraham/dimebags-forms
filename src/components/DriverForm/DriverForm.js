@@ -12,10 +12,7 @@ class DriverForm extends Component {
       lastname: '',
       phone: '',
       email: '',
-      company: '',
-      locationnum: '',
-      oapartners: '',
-      posvender: '',
+      badgeId: '',
       isSubmitted: false
     }
   }
@@ -27,12 +24,9 @@ class DriverForm extends Component {
     const { 
       firstname, 
       lastname, 
-      phone, 
+      phone,
       email, 
-      company, 
-      locationnum, 
-      oapartners, 
-      posvendors, 
+      badgeId
     } = this.state;
 
     let templateParams = {
@@ -40,16 +34,14 @@ class DriverForm extends Component {
       last_name: lastname,
       phone,
       email,
-      company,
-      locationNum: locationnum,
-      oapartners,
-      posvendors
+      badgeId,
+      contacttype: 'driver'
     };
     emailjs.send(
       'default_service',
       'template_FOllX5rW',
       templateParams,
-      process.env.REACT_APP_API_KEY
+      '1a027b021f2ecb3f71a4071beb0f3e0a'
     ).then(response => console.log(response))
 
     this.setState({isSubmitted: true});
@@ -97,38 +89,15 @@ class DriverForm extends Component {
             />
           </div>
           <div>
-            <label>Company</label>
-            <input 
+            <label>MED Badge ID Number</label>
+            <input
+              className='badgeId' 
               id='form-input' 
-              className="company" 
-              onChange={this.handleChange}
+              onChange={this.handleChange} 
+              required
             />
           </div>
-          <div>
-            <label>Number of Locations</label>
-            <input 
-              id='form-input' 
-              className="locationnum" 
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>Order Ahead Partner(s)</label>
-            <input 
-              id='form-input' 
-              className="oapartners" 
-              onChange={this.handleChange}
-            />
-          </div>
-          <div>
-            <label>POS Vendor</label>
-            <input 
-              id='form-input' 
-              className="posvendor" 
-              onChange={this.handleChange}
-            />
-          </div>
-            {this.state.isSubmitted ? <p className='success-msg'>Thanks for submitting your information! We will get in touch shortly!</p> : submitButton} 
+          {this.state.isSubmitted ? <p className='success-msg'>Thanks for submitting your information! We will get in touch shortly!</p> : submitButton} 
         </form>
       </div>
     )

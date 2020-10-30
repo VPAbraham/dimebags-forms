@@ -1,0 +1,40 @@
+@import '../../variables';
+
+// .disp-signup {
+//   &__content {
+    
+//     h1 {
+//       color: $main-green;
+//       font-size: 50px;
+//     }
+//     h3 {
+//       color: $form-white-accent;
+//     }
+//     p {
+//       color: $main-green;
+//     }
+//   }
+// }
+
+.back-btn {
+  width: 6rem;
+  height: 3.3rem;
+  border: 1px solid white;
+  margin: auto;
+  border-radius: 7px;
+  text-decoration: none;
+  padding: 8px;
+  transition: .2s;
+  p {
+    color: $accent-white;
+    margin: auto;
+    font-size: 1.4rem;
+  }
+}
+
+.back-btn:hover, .back-btn:focus {
+  border: 1px solid $main-green;
+  color: $main-green;
+  outline: none;
+  transition: .2s;
+}
