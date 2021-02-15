@@ -41,11 +41,18 @@ class DispensaryForm extends Component {
       contacttype: 'dispensary'
     };
     emailjs.send(
-      'default_service',
-      'template_FOllX5rW',
+      apiKeys
       templateParams,
       process.env.REACT_APP_API_KEY
-    ).then(response => console.log(response))
+    )
+    .then(
+     response => {
+       console.log(response.text)
+     } ,
+     error => {
+       console.log('error on delivery form', error.text)
+     }
+    )
 
     this.setState({isSubmitted: true});
   }

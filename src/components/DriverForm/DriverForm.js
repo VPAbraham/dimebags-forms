@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import * as emailjs from 'emailjs-com';
 import './DriverForm.scss';
 import { Button } from 'reactstrap';
+import apiKeys from '../../js/apiKeys';
 
 
 class DriverForm extends Component {
@@ -21,6 +22,7 @@ class DriverForm extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
+    console.log('hey?')
     const { 
       firstname, 
       lastname, 
@@ -37,23 +39,33 @@ class DriverForm extends Component {
       badgeId,
       contacttype: 'driver'
     };
+    console.log('2')
     emailjs.send(
-      'default_service',
-      'template_FOllX5rW',
+      apiKeys.SERVICE,
+      apiKeys.DRIVER_TEMPLATE_ID,
       templateParams,
-      '1a027b021f2ecb3f71a4071beb0f3e0a'
-    ).then(response => console.log(response))
+      apiKeys.USER_ID
+    )
+    .then(
+      response => {
+        console.log(response.text)
+      } ,
+      error => {
+        console.log('error on delivery form', error.text)
+      }
+    )
+    console.log('3')
 
     this.setState({isSubmitted: true});
   }
 
   render() {
-    const submitButton = <Button type='submit' onClick={(e) => {this.handleSubmit(e)}}>SUBMIT INFORMATION</Button>
+    const submitButton = <input type='submit' value='SUBMIT INFORMATION'/>
     return (
       <div className='driver-form'>
-        <form className='signup-form'>
+        <form className='signup-form' onSubmit={this.handleSubmit}>
           <div>
-            <label className="">First Name</label>
+            <label>First Name</label>
             <input 
               id='form-input' 
               className='firstname'
@@ -99,7 +111,6 @@ class DriverForm extends Component {
               id='form-input'
               name='badge-id' 
               onChange={this.handleChange} 
-              required
             />
           </div>
           {this.state.isSubmitted ? <p className='success-msg'>Thanks for submitting your information! We will get in touch shortly!</p> : submitButton} 
