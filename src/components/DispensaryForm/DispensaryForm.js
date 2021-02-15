@@ -80,6 +80,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='phone'
+              name='phone'
               onChange={this.handleChange}
               required
             />
@@ -89,6 +90,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='email'
+              name='email'
               onChange={this.handleChange} 
               required
             />
@@ -98,6 +100,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='company' 
+              name='company'
               onChange={this.handleChange}
             />
           </div>
@@ -106,6 +109,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='locationnum' 
+              name='location-num'
               onChange={this.handleChange}
             />
           </div>

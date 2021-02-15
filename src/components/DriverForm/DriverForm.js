@@ -51,12 +51,13 @@ class DriverForm extends Component {
     const submitButton = <Button type='submit' onClick={(e) => {this.handleSubmit(e)}}>SUBMIT INFORMATION</Button>
     return (
       <div className='driver-form'>
-        <form className="signup-form">
+        <form className='signup-form'>
           <div>
             <label className="">First Name</label>
             <input 
               id='form-input' 
-              className="firstname" 
+              className='firstname'
+              name='first-name' 
               onChange={this.handleChange} 
               required 
             />
@@ -65,7 +66,8 @@ class DriverForm extends Component {
             <label>Last Name</label>
             <input 
               id='form-input' 
-              className="lastname" 
+              className='lastname'
+              name='last-name' 
               onChange={this.handleChange} 
               required
             />
@@ -74,7 +76,8 @@ class DriverForm extends Component {
             <label>Phone Number</label>
             <input 
               id='form-input' 
-              className="phone" 
+              className='phone'
+              name='phone' 
               onChange={this.handleChange}
               required
             />
@@ -83,7 +86,8 @@ class DriverForm extends Component {
             <label>Email</label>
             <input 
               id='form-input' 
-              className="email" 
+              className='email'
+              name='email'
               onChange={this.handleChange} 
               required
             />
@@ -92,7 +96,8 @@ class DriverForm extends Component {
             <label>MED Badge ID Number</label>
             <input
               className='badgeId' 
-              id='form-input' 
+              id='form-input'
+              name='badge-id' 
               onChange={this.handleChange} 
               required
             />
