@@ -54,13 +54,14 @@ class DispensaryForm extends Component {
     const submitButton = <Button type='submit' onClick={(e) => {this.handleSubmit(e)}}>SUBMIT INFORMATION</Button>
     return (
       <div className='driver-form'>
-        <form className="signup-form">
+        <form className='signup-form'>
           <div>
             <label className="">First Name</label>
             <input 
               id='form-input' 
-              className="firstname" 
-              onChange={this.handleChange} 
+              className='firstname'
+              onChange={this.handleChange}
+              name='first-name' 
               required 
             />
           </div>
@@ -68,7 +69,8 @@ class DispensaryForm extends Component {
             <label>Last Name</label>
             <input 
               id='form-input' 
-              className="lastname" 
+              className='lastname' 
+              name='last-name' 
               onChange={this.handleChange} 
               required
             />
@@ -77,7 +79,7 @@ class DispensaryForm extends Component {
             <label>Phone Number</label>
             <input 
               id='form-input' 
-              className="phone" 
+              className='phone'
               onChange={this.handleChange}
               required
             />
@@ -86,7 +88,7 @@ class DispensaryForm extends Component {
             <label>Email</label>
             <input 
               id='form-input' 
-              className="email" 
+              className='email'
               onChange={this.handleChange} 
               required
             />
