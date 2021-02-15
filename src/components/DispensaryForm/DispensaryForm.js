@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './DispensaryForm.scss';
 import * as emailjs from 'emailjs-com';
 import { Button } from 'reactstrap';
+import apiKeys from '../../js/apiKeys';
 
 
 class DispensaryForm extends Component {
@@ -41,11 +42,19 @@ class DispensaryForm extends Component {
       contacttype: 'dispensary'
     };
     emailjs.send(
-      'default_service',
-      'template_FOllX5rW',
+      apiKeys.SERVICE,
+      apiKeys.DISP_TEMPLATE_ID,
       templateParams,
-      process.env.REACT_APP_API_KEY
-    ).then(response => console.log(response))
+      apiKeys.USER_ID
+    )
+    .then(
+     response => {
+       console.log(response.text)
+     } ,
+     error => {
+       console.log('error on delivery form', error.text)
+     }
+    )
 
     this.setState({isSubmitted: true});
   }
@@ -54,13 +63,14 @@ class DispensaryForm extends Component {
     const submitButton = <Button type='submit' onClick={(e) => {this.handleSubmit(e)}}>SUBMIT INFORMATION</Button>
     return (
       <div className='driver-form'>
-        <form className="signup-form">
+        <form className='signup-form'>
           <div>
             <label className="">First Name</label>
             <input 
               id='form-input' 
-              className="firstname" 
-              onChange={this.handleChange} 
+              className='firstname'
+              onChange={this.handleChange}
+              name='first-name' 
               required 
             />
           </div>
@@ -68,7 +78,8 @@ class DispensaryForm extends Component {
             <label>Last Name</label>
             <input 
               id='form-input' 
-              className="lastname" 
+              className='lastname' 
+              name='last-name' 
               onChange={this.handleChange} 
               required
             />
@@ -77,7 +88,8 @@ class DispensaryForm extends Component {
             <label>Phone Number</label>
             <input 
               id='form-input' 
-              className="phone" 
+              className='phone'
+              name='phone'
               onChange={this.handleChange}
               required
             />
@@ -86,7 +98,8 @@ class DispensaryForm extends Component {
             <label>Email</label>
             <input 
               id='form-input' 
-              className="email" 
+              className='email'
+              name='email'
               onChange={this.handleChange} 
               required
             />
@@ -96,6 +109,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='company' 
+              name='company'
               onChange={this.handleChange}
             />
           </div>
@@ -104,6 +118,7 @@ class DispensaryForm extends Component {
             <input 
               id='form-input' 
               className='locationnum' 
+              name='location-num'
               onChange={this.handleChange}
             />
           </div>
