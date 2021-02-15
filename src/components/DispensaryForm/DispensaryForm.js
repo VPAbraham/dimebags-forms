@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './DispensaryForm.scss';
 import * as emailjs from 'emailjs-com';
 import { Button } from 'reactstrap';
+import apiKeys from '../../js/apiKeys';
 
 
 class DispensaryForm extends Component {
@@ -41,9 +42,10 @@ class DispensaryForm extends Component {
       contacttype: 'dispensary'
     };
     emailjs.send(
-      apiKeys
+      apiKeys.SERVICE,
+      apiKeys.DISP_TEMPLATE_ID,
       templateParams,
-      process.env.REACT_APP_API_KEY
+      apiKeys.USER_ID
     )
     .then(
      response => {
