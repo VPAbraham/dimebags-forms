@@ -9,7 +9,7 @@ const Landing = () => {
     <div className='landing'>
       <div className='landing__welcome'>
         <h1>Welcome to</h1>
-        <h1>Dimebags Cannabis Delivery</h1>
+        <h1>Dimebags Delivery</h1>
         <p className='landing-text'>We thank you for your interest in working as a Dimebags partner.
          Please select the appropriate contact form below.</p>
       </div>
