@@ -7,27 +7,31 @@
     max-width: 500px;
     margin: auto;
 
-    h1 {
-      color: $main-green;
-      font-size: 60px;
+    img {
+      width: 50%;
+      height: auto;
+    }
+
+    h3 {
+      color: $main-header;
+      font-size: 2.5rem;
     }
 
     p {
-      color: $main-green
+      color: $main-header
     }
   }
 
   &__options {
     display: flex;
     width: 80%;
-    margin: 10rem auto;
+    margin: 4rem auto;
     text-align: center;
     justify-content: space-around;
     align-items: center;
 
     p {
       font-size: 2rem;
-      $color: $accent-white;
     }
 
     img {
@@ -37,22 +41,24 @@
   }
 
   .questions {
-    color: $main-green
+    color: $main-header;
+    margin-top: 8rem;
   }
 }
 
 .divider {
   height: 200px;
   width: 5px;
-  background-color: $grey-bg;
+  // background-color: rgb(199, 199, 199);
 }
 
 .route-link {
-  
+  width: 300px;
+  color: black;
 }
 
 .route-link:hover {
   outline: none;
   text-decoration: none;
-  color: $main-green;
+  // color: $link-highlighted;
 }

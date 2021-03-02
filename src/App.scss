@@ -8,53 +8,31 @@
 }
 
 html {
-  background-color: #282c34;
   height: 100%;
 }
 
 .App {
   text-align: center;
-  background-color: #282c34;
+  background-color: $main-background;
 }
 
 a {
   text-decoration: none; 
+  color: black;
 }
 
 a:visited {
-  color: $accent-white;
+  color: black;
   text-decoration: none; 
 }
 
 a:hover {
-  color: green;
   text-decoration: none; 
+  color: black;
+  color: $link-unvisited;
 }
 
 input:focus, textarea:focus, select:focus{
   outline: none;
+  color: $link-unvisited;
 }
-
-// .logo {
-//   height: 20vmin;
-//   pointer-events: none;
-//   margin: 30px;
-// }
-
-// @media (prefers-reduced-motion: no-preference) {
-//   .logo {
-//     animation: logo-spin infinite 20s linear;
-//   }
-// }
-
-// @keyframes logo-spin {
-//   from {
-//     transform: rotate(0deg);
-//   }
-//   to {
-//     transform: rotate(360deg);
-//   }
-// }
-
-
-
