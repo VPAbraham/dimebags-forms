@@ -1,4 +1,3 @@
-$main-green: #2A9C57;
 @import '../../variables';
 
 .title-heading {
@@ -7,7 +6,7 @@ $main-green: #2A9C57;
 
 .sign-up {
   text-align: center;
-  background-color: $form-slate-bg;
+  background-color: $main-background;
   display: flex;
   flex-direction: column;
 
@@ -21,20 +20,24 @@ $main-green: #2A9C57;
     text-align: center;
     width: 100%;
     justify-content: space-between;
-    margin: 2vh;
     padding: 1vh;
 
 
+    img {
+      width: 220px;
+      height: auto;
+      margin: auto;
+    }
 
     h1 {
-      color: $main-green;
+      color: $main-header;
       font-size: 50px;
     }
     h3 {
       color: $form-white-accent;
     }
     p {
-      color: $main-green;
+      color: $main-header;
     }
   }
 }

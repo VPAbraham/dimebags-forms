@@ -22,7 +22,6 @@ class DriverForm extends Component {
   }
   handleSubmit = (e) => {
     e.preventDefault();
-    console.log('hey?')
     const { 
       firstname, 
       lastname, 
@@ -39,7 +38,6 @@ class DriverForm extends Component {
       badgeId,
       contacttype: 'driver'
     };
-    console.log('2')
     emailjs.send(
       apiKeys.SERVICE,
       apiKeys.DRIVER_TEMPLATE_ID,
@@ -54,16 +52,15 @@ class DriverForm extends Component {
         console.log('error on delivery form', error.text)
       }
     )
-    console.log('3')
-
+    
     this.setState({isSubmitted: true});
   }
 
   render() {
-    const submitButton = <input type='submit' value='SUBMIT INFORMATION'/>
+    const submitButton = <Button type='submit' onClick={(e) => {this.handleSubmit(e)}}>SUBMIT INFORMATION</Button>
     return (
       <div className='driver-form'>
-        <form className='signup-form' onSubmit={this.handleSubmit}>
+        <form className='signup-form'>
           <div>
             <label>First Name</label>
             <input 

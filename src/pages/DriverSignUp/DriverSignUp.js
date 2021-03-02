@@ -2,14 +2,15 @@ import React from 'react';
 import './DriverSignUp.scss';
 import DriverForm from '../../components/DriverForm/DriverForm';
 import { Link } from 'react-router-dom';
+import smoothLogo from '../../assets/dimebags-smooth-logo.png';
 
 const DriverSignUp = () => {
   return (
     <div className='sign-up'>
       <div className='home-heading'>
-        <h1>Dimebags Delivery</h1>
+        <img src={smoothLogo} alt='dimebags logo'/>
         <h3>Delivery Drivers Wanted</h3>
-        <p>Fill out the below form and we will get in touch with you, regarding delivery driving.</p>
+        <p>Fill out the below form and we will get in touch with you.</p>
       </div>
       <DriverForm />
       <Link to='/' >
